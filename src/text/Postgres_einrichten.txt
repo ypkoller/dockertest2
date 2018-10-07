@@ -1,0 +1,29 @@
+-- Neuer Benutzer Wilfly
+
+CREATE ROLE wildfly NOSUPERUSER NOCREATEDB NOCREATEROLE INHERIT LOGIN;
+
+alter role wildfly password 'wildfly_ds218';
+
+
+-- Neues Schema
+
+
+
+-- Rechte von Schema test_schema zu role wildfly
+
+GRANT ALL on SCHEMA test_schema TO wildfly;
+
+grant all on all tables in schema test_schema to wildfly;
+
+ ALTER ROLE wildfly SET search_path = "$user",test_schema;
+
+-- Ev nicht notwendig
+grant usage on schema test_schema to wildfly;
+
+
+
+
+
+
+ 
+ commit;
