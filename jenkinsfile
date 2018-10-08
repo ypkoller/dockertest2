@@ -1,7 +1,7 @@
-def CONTAINER_NAME="jenkins-pipeline"
+def CONTAINER_NAME="firsttry"
 def CONTAINER_TAG="latest"
-def DOCKER_HUB_USER="hakdogan"
-def HTTP_PORT="8090"
+def DOCKER_HUB_USER="gandalf1973"
+def HTTP_PORT="8080"
 
 node {
 
@@ -36,7 +36,7 @@ node {
     }
 
     stage('Push to Docker Registry'){
-        withCredentials([usernamePassword(credentialsId: 'dockerHubAccount', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+        withCredentials([usernamePassword(credentialsId: 'DockerHub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
             pushToImage(CONTAINER_NAME, CONTAINER_TAG, USERNAME, PASSWORD)
         }
     }
