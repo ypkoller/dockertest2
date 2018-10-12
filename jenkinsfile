@@ -18,11 +18,6 @@ node {
     stage('Build'){
         sh "mvn clean install"
     }
-    post {
-	  always {
-	    junit "target/surefire-reports"
-	  }
-	}
 
      
      stage('SonarQube analysis') {
@@ -49,6 +44,11 @@ node {
     stage('Run App'){
         runApp(CONTAINER_NAME, CONTAINER_TAG, DOCKER_HUB_USER, HTTP_PORT)
     }
+    post {
+	  always {
+	    junit "target/surefire-reports"
+	  }
+	}
 
 }
 
