@@ -18,6 +18,11 @@ node {
     stage('Build'){
         sh "mvn clean install"
     }
+    post {
+	  always {
+	    junit "target/surefire-reports"
+	  }
+	}
 
      
      stage('SonarQube analysis') {
