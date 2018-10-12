@@ -16,7 +16,10 @@ node {
     }
 
     stage('Build'){
-        sh "mvn clean install"
+    	steps {
+        	sh "mvn clean install";
+        	junit "target/surefire-reports/*.xml";
+        	}
     }
 
      
@@ -44,11 +47,6 @@ node {
     stage('Run App'){
         runApp(CONTAINER_NAME, CONTAINER_TAG, DOCKER_HUB_USER, HTTP_PORT)
     }
-    post {
-	  always {
-	    junit "target/surefire-reports"
-	  }
-	}
 
 }
 
