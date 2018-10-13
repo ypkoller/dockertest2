@@ -21,12 +21,9 @@ node {
 	    cobertura coberturaReportFile: "target/site/cobertura/*.xml"
     }
 
-/*
 	stage('Build'){
 	    sh "mvn install"
 	}
-
-
   
      stage('SonarQube analysis') {
     	withSonarQubeEnv('SonarQube') {
@@ -52,7 +49,6 @@ node {
     stage('Run App'){
         runApp(CONTAINER_NAME, CONTAINER_TAG, DOCKER_HUB_USER, HTTP_PORT)
     }
-    */
 }
 
 def imagePrune(containerName){
