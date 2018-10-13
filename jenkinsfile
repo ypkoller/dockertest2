@@ -17,8 +17,8 @@ node {
 
     stage('Build'){
     	steps {
-        	sh "mvn clean install";
-        	junit "target/surefire-reports/*.xml";
+        	sh "mvn clean install"
+        	junit "**/target/surefire-reports/*.xml"
         	}
     }
 
