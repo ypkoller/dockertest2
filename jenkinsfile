@@ -15,9 +15,16 @@ node {
         checkout scm
     }
 
+	stage('Test'){
+	    sh "mvn -U clean test cobertura:cobertura -Dcobertura.report.format=xml"
+	    junit "**/target/surefire-reports/*.xml"
+        [$class: 'CoberturaPublisher', coberturaReportFile: '**/target/cobertura/coverage.xml']
+	}
+
+
     stage('Build'){
-        	sh "mvn clean install cobertura:cobertura -Dcobertura.report.format=xml"
-        	junit "**/target/surefire-reports/*.xml"
+        	sh "mvn clean install"
+        	
     }
 
      /*
