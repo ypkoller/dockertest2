@@ -20,7 +20,7 @@ node {
         	junit "**/target/surefire-reports/*.xml"
     }
 
-     
+     /*
      stage('SonarQube analysis') {
     	withSonarQubeEnv('SonarQube') {
       	// requires SonarQube Scanner for Maven 3.2+
@@ -45,7 +45,7 @@ node {
     stage('Run App'){
         runApp(CONTAINER_NAME, CONTAINER_TAG, DOCKER_HUB_USER, HTTP_PORT)
     }
-
+    */
 }
 
 def imagePrune(containerName){
