@@ -1,0 +1,9 @@
+Beispiel für Dokcer und Jenkins mit Pipeline
+
+
+Wichtige Links:
+- Entwickelt nach folgendem Beispiel: https://medium.com/@hakdogan/an-end-to-end-tutorial-to-continuous-integration-and-continuous-delivery-by-dockerize-jenkins-f5b9b45b610d
+- Jenkins weiter automatisieren: https://dzone.com/articles/dockerizing-jenkins-2-setup-and-using-it-along-wit
+
+Ziel: Jenkins komplett mit Docke von Git auf automatische aufsetzen
+- Erzeugen eines Jobs fehlt vorallem
