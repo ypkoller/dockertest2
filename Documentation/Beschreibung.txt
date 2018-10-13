@@ -1,5 +1,10 @@
-Beispiel für Dokcer und Jenkins mit Pipeline
+Beispiel für Docker und Jenkins mit Pipeline
 
+Inklusive
+- Junit
+- Cobertura
+
+Plugins für Cobertura müssen installiert werden
 
 Wichtige Links:
 - Entwickelt nach folgendem Beispiel: https://medium.com/@hakdogan/an-end-to-end-tutorial-to-continuous-integration-and-continuous-delivery-by-dockerize-jenkins-f5b9b45b610d
