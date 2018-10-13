@@ -18,15 +18,16 @@ node {
     stage('Test') {
        sh "mvn clean cobertura:cobertura -Dcobertura.report.format=xml"
 	    junit "**/target/surefire-reports/*.xml"
-        [$class: 'CoberturaPublisher', coberturaReportFile: '**/target/site/cobertura/coverage.xml']
+        [$class: 'CoberturaPublisher', coberturaReportFile: 'target/site/cobertura/coverage.xml']
     }
 
+/*
 	stage('Build'){
 	    sh "mvn install"
 	}
 
 
-     /*
+  
      stage('SonarQube analysis') {
     	withSonarQubeEnv('SonarQube') {
       	// requires SonarQube Scanner for Maven 3.2+
