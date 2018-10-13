@@ -16,7 +16,7 @@ node {
     }
 
     stage('Build'){
-        	sh "mvn clean install -Dcobertura.report.format=xml"
+        	sh "mvn clean install cobertura:cobertura -Dcobertura.report.format=xml"
         	junit "**/target/surefire-reports/*.xml"
     }
 
